@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        #screen1, #screen2 {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            display: none;
+            background-color: #f0f0f0;
+            text-align: center;
+            padding: 20px;
+        }
+
+        #screen1 {
+            background-color: #a0a0a0;
+        }
+
+        button {
+            padding: 10px;
+            font-size: 16px;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div id="screen1">
+    <h1>Screen 1</h1>
+    <p>This is the content of Screen 1</p>
+    <button onclick="switchScreen()">Switch to Screen 2</button>
+</div>
+
+<div id="screen2">
+    <h1>Screen 2</h1>
+    <p>This is the content of Screen 2</p>
+    <button onclick="switchScreen()">Switch to Screen 1</button>
+</div>
+
+<script>
+    function switchScreen() {
+        var screen1 = document.getElementById("screen1");
+        var screen2 = document.getElementById("screen2");
+
+        if (screen1.style.display === "none") {
+            screen1.style.display = "block";
+            screen2.style.display = "none";
+        } else {
+            screen1.style.display = "none";
+            screen2.style.display = "block";
+        }
+    }
+</script>
+
+</body>
+</html>
